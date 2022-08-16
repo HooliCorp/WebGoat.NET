@@ -29,6 +29,6 @@ jobs:
     - name: Analyze with ShiftLeft
       run: |
         docker build -t hooli-webgoat .
-        ${GITHUB_WORKSPACE}/sl analyze --wait --app webgoatcore --tag branch=${{ github.head_ref || steps.extract_branch.outputs.branch }} --sca --container hooli-webgoat --csharp --dotnet --cpg WebGoatCore.sln
+        ${GITHUB_WORKSPACE}/sl analyze --wait --app webgoatcore --tag branch=${{ github.head_ref || steps.extract_branch.outputs.branch }} --sca --container hooli-webgoat --csharp --cpg WebGoatCore.sln
       env:
         SHIFTLEFT_ACCESS_TOKEN: ${{ secrets.SHIFTLEFT_ACCESS_TOKEN }}
